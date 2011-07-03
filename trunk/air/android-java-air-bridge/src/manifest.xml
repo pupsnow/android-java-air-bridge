@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<componentPackage>
+	<component id="MessageHandler" class="merapi.handlers.mxml.MessageHandler"/>
+	<component id="Message" class="merapi.messages.Message"/>
+	<component id="CoreErrorHandler" class="merapi.handlers.mxml.CoreErrorHandler"/>
+	<component id="SystemExecuteMessage" class="merapi.systemexecute.messages.SystemExecuteMessage"/>
+</componentPackage>
