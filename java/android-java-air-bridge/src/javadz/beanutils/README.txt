@@ -1,0 +1,1 @@
+This package contains classes that may have been copied from org.apache.commons.beanutils and may have been amended.

@@ -1,0 +1,1 @@
+This package contains classes that have been amended or copied from the java.beans package

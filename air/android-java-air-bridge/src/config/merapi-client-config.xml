@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="hostname">localhost</entry>
+<entry key="port">54321</entry>
+<entry key="autoConnect">false</entry>
+<entry key="reader">merapi.io.amf.AMF3Reader</entry>
+<entry key="writer">merapi.io.amf.AMF3Writer</entry>
+</properties>
