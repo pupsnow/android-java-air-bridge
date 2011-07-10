@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="javadz.examples.androidbridge" android:versionCode="1000000" android:versionName="1.0.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:label="BridgeExample" android:icon="@drawable/icon" android:hardwareAccelerated="true" android:debuggable="true">
+        <activity 
+        android:theme="@style/Theme.NoShadow" 
+        android:label="BridgeExample" 
+        android:name=".MainApp" 
+        android:launchMode="singleTask" 
+        android:screenOrientation="nosensor" 
+        android:configChanges="keyboardHidden|orientation" 
+        android:windowSoftInputMode="stateHidden|adjustResize">
+        
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+    
+    <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="11" />
+    
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-feature android:name="android.hardware.camera" />
+	<uses-feature android:name="android.hardware.camera.autofocus" />
+	
+	<uses-permission android:name="android.permission.RECORD_AUDIO" />
+	<uses-feature android:name="android.hardware.microphone" android:required="false"/> 
+	
+	<uses-permission android:name="android.permission.INTERNET" />
+	
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	
+    <uses-configuration android:reqFiveWayNav="true"/>
+    <supports-screens android:normalScreens="true"/>
+    <uses-feature android:required="true" android:name="android.hardware.touchscreen.multitouch"/>
+
+</manifest>
