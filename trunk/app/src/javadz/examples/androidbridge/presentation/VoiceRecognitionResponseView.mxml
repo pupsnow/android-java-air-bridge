@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SkinnableContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" 
+					  xmlns:parsley="http://www.spicefactory.org/parsley"
+					  xmlns:observer="com.adobe.cairngorm.observer.*">
+	
+	<fx:Script>
+		<![CDATA[
+			import spark.components.Button;
+			import spark.components.Label;
+			
+			
+			//--------------------------------------------------------------------------
+			//
+			//  Properties 
+			//
+			//--------------------------------------------------------------------------
+			[SkinPart(required="true")]
+			public var speechResponse : Label;			
+			
+			[SkinPart(required="true")]
+			public var button : Button;
+			
+			[Bindable]
+			public var model:VoiceRecognitionResponsePM;
+			
+			//--------------------------------------------------------------------------
+			//
+			//  Methods 
+			//
+			//--------------------------------------------------------------------------
+			override protected function partAdded(partName:String, instance:Object):void
+			{
+				super.partAdded(partName, instance);
+				
+				if (instance == button)
+				{
+					button.addEventListener(TouchEvent.TOUCH_TAP, speak_touchTapHandler );
+					button.addEventListener(MouseEvent.CLICK, speak_touchTapHandler );
+				}
+				
+			}
+			
+			override protected function partRemoved(partName:String, instance:Object):void
+			{
+				super.partRemoved(partName, instance);
+				
+				if (instance == button)
+				{
+					button.removeEventListener(TouchEvent.TOUCH_TAP, speak_touchTapHandler );
+					button.removeEventListener(MouseEvent.CLICK, speak_touchTapHandler );
+				}
+			}
+			
+			override protected function getCurrentSkinState():String 
+			{
+				return currentState;
+			}
+			
+			
+			protected function speak_touchTapHandler( e : Event ):void
+			{
+				model.speakRequest();
+			}
+			
+			private function setResponseText( param : String ):void
+			{
+				if ( param != null )
+				{
+					speechResponse.text = param;
+					trace("[VoiceRecognitionResponseView] setResponseText " + param);
+				}
+					
+				
+			}
+			
+			
+		]]>
+	</fx:Script>
+	
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		<parsley:FastInject type="{VoiceRecognitionResponsePM}" property="model" />
+		
+		<observer:Observe 
+			source="{ model.recognisedResponse.responseText }"
+			handler="{ setResponseText }"
+			/>
+		
+	</fx:Declarations>
+</s:SkinnableContainer>

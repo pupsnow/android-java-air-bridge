@@ -1,0 +1,45 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+
+@font-face {
+	src: url("/Library/Fonts/Arial.ttf");
+	fontFamily: Arial;
+	fontStyle: regular;
+	fontWeight: regular;
+	advancedAntiAliasing: true; 
+	embedAsCff: true;
+}
+
+@font-face {
+	src: url("/Library/Fonts/Arial.ttf");
+	fontFamily: Arial;
+	fontStyle: regular;
+	fontWeight: bold;
+	advancedAntiAliasing: true;
+	embedAsCff: true;
+}
+
+
+s|Application
+{
+	background-color: #000000;
+	embedFonts: true;
+	font-weight: normal;
+	fontSize: 14;
+	fontFamily: Arial;
+}
+
+#speechResponse
+{	
+	color: #ffffff;	
+	fontSize: 36;
+}
+
+#button
+{
+	color: #000000;	
+}
+
+
+
